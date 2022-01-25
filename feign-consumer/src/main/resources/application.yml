@@ -11,3 +11,19 @@ spring:
     allow-bean-definition-overriding: true
 server:
   port: 8888
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+  PoolMaxThreads: 100
+  MaxAutoRetries: 0
+  eager-load.enabled: true
+logging:
+  level:
+    com.xz.consumer: debug
+feign:
+  client:
+    config:
+      nacos-producer:
+        loggerLevel: FULL
+        connectTimeout: 10000
+        readTimeout: 10000

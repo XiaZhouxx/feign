@@ -3,10 +3,12 @@ package com.xz.consumer.config;
 import com.alibaba.fastjson.JSONObject;
 import com.xz.consumer.model.User;
 import feign.FeignException;
+import feign.Logger;
 import feign.Response;
 import feign.Util;
 import feign.codec.DecodeException;
 import feign.codec.Decoder;
+import org.apache.juli.logging.Log;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
@@ -24,23 +26,23 @@ import java.nio.charset.StandardCharsets;
  * @author xz
  * @date 2022/1/20 14:24
  */
-//@Configuration
+@Configuration
 public class FeignConfig {
-    @Autowired
-    private ObjectFactory<HttpMessageConverters> messageConverters;
 
-    @Bean
-    public Decoder decoder() {
-        return new Decoder(){
-            @Override
-            public Object decode(Response response, Type type) throws IOException, FeignException {
-                if (type instanceof Class) {
-//                    return JSONObject.parseObject(res.toString(), User.class);
-                }
-                String res = Util.toString(response.body().asReader(StandardCharsets.UTF_8));
-
-                return null;
-            }
-        };
-    }
+//    @Bean
+//    public Decoder decoder() {
+//        return new Decoder(){
+//            @Override
+//            public Object decode(Response response, Type type) throws IOException, FeignException {
+//                String res = Util.toString(response.body().asReader(StandardCharsets.UTF_8));
+//
+//                return JSONObject.parseObject(res, User.class);
+//            }
+//        };
+//    }
+//
+//    @Bean
+//    public Logger.Level level() {
+//        return Logger.Level.FULL;
+//    }
 }

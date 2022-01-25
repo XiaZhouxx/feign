@@ -11,8 +11,4 @@ spring:
     allow-bean-definition-overriding: true
 server:
   port: 9999
-ribbon:
-  ReadTimeout: 5000
-  ConnectTimeout: 5000
-  PoolMaxThreads: 100
-  MaxAutoRetries: 0
+
