@@ -1,5 +1,6 @@
 package com.xz.producer.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,9 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class ProducerController {
+    @Value("${server.port}")
+    String port;
     @PostMapping("/say")
     public String say() {
-        System.out.println("hello world");
-        return "{'name':'xz', 'age': 18}";
+        System.out.println("current server port " + port);
+        return port;
     }
 }

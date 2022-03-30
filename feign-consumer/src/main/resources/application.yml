@@ -4,7 +4,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.254.232:8848
+        server-addr: 192.168.132.132:8848
         ephemeral: true # 配置实例是否临时 AP/CP 在最早Nacos版本是被写死在NacosServiceRegistry中只能修改源码
         namespace: dev
   main:
@@ -12,8 +12,8 @@ spring:
 server:
   port: 8888
 ribbon:
-  ReadTimeout: 5000
-  ConnectTimeout: 5000
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
   PoolMaxThreads: 100
   MaxAutoRetries: 0
   eager-load.enabled: true

@@ -4,11 +4,11 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.254.232:8848
+        server-addr: 192.168.132.132:8848
         ephemeral: true # 配置实例是否临时 AP/CP 在最早Nacos版本是被写死在NacosServiceRegistry中只能修改源码
         namespace: dev
   main:
     allow-bean-definition-overriding: true
 server:
-  port: 9999
+  port: 9991
 
